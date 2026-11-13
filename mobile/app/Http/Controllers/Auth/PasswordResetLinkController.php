@@ -28,7 +28,7 @@ class PasswordResetLinkController extends Controller
 
         $cacheKey = 'password_reset_' . $user->email;
 
-        Cache::put(
+        Cache::put(  
             $cacheKey,
             ['otp' => Hash::make($otp)],
             now()->addMinutes(3)

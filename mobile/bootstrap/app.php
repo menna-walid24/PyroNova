@@ -15,14 +15,14 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->validateCsrfTokens(except: [
-            'products', 'students', 'books',
-            'books/*', 'doctors', 'doctors/*',
-            'appointments', 'appointments/*',
+           
+            
+            
             'register/*', 'register', '/login',
             'me', '/me', 'me/*', '/logout', 'logout',
             'generate-otp/*', '/chats',
             'verify-email', 'verify-email/*',
-            'fcm-token', '/reset-module', 'simulate', '/me', '/ask'
+            'fcm-token', '/reset-module', 'simulate', '/me', '/ask','/guidlines'
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

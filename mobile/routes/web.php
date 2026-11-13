@@ -19,3 +19,5 @@ Route::post('/ask',[ChatbotController::class,'sendmessages'])->middleware('auth:
 Route::get('/chats',[ChatController::class,'index'])->middleware('auth:sanctum');
 Route::post('/chats',[ChatController::class,'store'])->middleware('auth:sanctum');
 Route::get('/chats/{id}',[ChatController::class,'show'])->middleware('auth:sanctum');
+Route::get('/guidlines',[GuidelinesController::class,'show'])->middleware('auth:sanctum');
+Route::patch('/guidlines/select',[GuidelinesController::class,'select'])->middleware('auth:sanctum');
