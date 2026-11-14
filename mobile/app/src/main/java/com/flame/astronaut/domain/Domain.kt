@@ -62,13 +62,19 @@ data class Step(val title: String, val body: String)
 data class RiskState(
     val index: Int,
     val level: RiskLevel,
-    val o2: Double,
-    val pressure: Double,
+    val o2: Double?,
+    val pressure: Double?,
     val airflow: Double,
     val watchMaterial: String,
     val trend: List<Float>,
     val updatedSecondsAgo: Int,
     val trendText: String = "",
+    /** Raw radiometer signal of the replayed flight (unit not stated in the NASA source). */
+    val heat: Double? = null,
+    val igniterOn: Boolean = false,
+    /** Where the numbers come from, e.g. "SAFFIRE-III flight replay". Empty for real sensors. */
+    val source: String = "",
+    val isLive: Boolean = true,
 )
 
 data class MaterialRisk(val name: String, val fraction: Float, val level: RiskLevel)

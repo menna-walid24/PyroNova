@@ -135,7 +135,7 @@ fun HomeScreen(vm: HomeViewModel, onOpenChat: () -> Unit, onNavigate: (NavTab) -
                 user?.module?.takeIf { it.isNotBlank() }?.let { Chip("${it.uppercase()} MODULE") }
             }
 
-            // risk card — only with real telemetry; the backend has no telemetry endpoint yet
+            // risk card — GET /risk/current (replay of real SAFFIRE-III flight telemetry); text fallback if unavailable
             val r = risk
             Column(
                 Modifier.fillMaxWidth().panel(Color(0xFF0A1018), 24.dp, C.Stroke).padding(horizontal = 18.dp, vertical = 16.dp),
@@ -153,9 +153,16 @@ fun HomeScreen(vm: HomeViewModel, onOpenChat: () -> Unit, onNavigate: (NavTab) -
                     RiskGauge(r, Modifier.fillMaxWidth().padding(top = 8.dp))
                     Spacer(Modifier.height(12.dp))
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Metric("O₂", "%.1f".fmtUS(r.o2), "%", Modifier.weight(1f))
-                        Metric("PRESS", "%.1f".fmtUS(r.pressure), "k", Modifier.weight(1f))
-                        Metric("FLOW", "%.2f".fmtUS(r.airflow), "m/s", Modifier.weight(1f))
+                        if (r.o2 != null && r.pressure != null) {
+                            Metric("O₂", "%.1f".fmtUS(r.o2), "%", Modifier.weight(1f))
+                            Metric("PRESS", "%.1f".fmtUS(r.pressure), "k", Modifier.weight(1f))
+                            Metric("FLOW", "%.2f".fmtUS(r.airflow), "m/s", Modifier.weight(1f))
+                        } else {
+                            // SAFFIRE-III replay: radiometer + airflow are raw signals (units not stated in the source)
+                            Metric("HEAT", "%.0f".fmtUS(r.heat ?: 0.0), "", Modifier.weight(1f))
+                            Metric("FLOW", "%.1f".fmtUS(r.airflow), "", Modifier.weight(1f))
+                            Metric("IGNITER", if (r.igniterOn) "ON" else "OFF", "", Modifier.weight(1f))
+                        }
                         Metric("WATCH", r.watchMaterial, "", Modifier.weight(1.05f), watch = true)
                     }
                     Spacer(Modifier.height(14.dp))
@@ -163,6 +170,10 @@ fun HomeScreen(vm: HomeViewModel, onOpenChat: () -> Unit, onNavigate: (NavTab) -
                         Sparkline(r.trend, Modifier.width(75.dp).height(24.dp))
                         Spacer(Modifier.width(10.dp))
                         Text(r.trendText.ifBlank { "Monitoring." }, style = sans(14f, C.Text2, lh = 1.3f))
+                    }
+                    if (r.source.isNotBlank()) {
+                        Spacer(Modifier.height(8.dp))
+                        Text(r.source, style = mono(10.5f, C.Faint, .04f))
                     }
                 }
             }

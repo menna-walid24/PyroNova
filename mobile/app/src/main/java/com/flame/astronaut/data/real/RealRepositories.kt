@@ -255,7 +255,38 @@ class RealHealthRepository : HealthRepository {
     }
 }
 
-/** No telemetry endpoint exists yet: the Home screen shows an "unavailable" card instead of invented numbers. */
-class RealRiskRepository : RiskRepository {
-    override fun observeRisk(): Flow<RiskState> = emptyFlow()
+/**
+ * Polls GET /risk/current every 5 s. The backend replays REAL archived NASA SAFFIRE-III flight telemetry
+ * (not a live feed — `is_live = false`, shown on the card). If the endpoint fails, nothing is emitted, so the
+ * Home screen keeps its "telemetry isn't connected" text instead of showing invented numbers.
+ */
+class RealRiskRepository(private val api: PyronovaApi) : RiskRepository {
+    override fun observeRisk(): Flow<RiskState> = flow {
+        while (true) {
+            call { api.riskCurrent() }.onSuccess { d ->
+                emit(
+                    RiskState(
+                        index = d.index.coerceIn(0, 100),
+                        level = when (d.level?.uppercase()) {
+                            "HIGH" -> RiskLevel.HIGH
+                            "MED", "MEDIUM" -> RiskLevel.MED
+                            else -> RiskLevel.LOW
+                        },
+                        o2 = d.o2,
+                        pressure = d.pressure,
+                        airflow = d.airflow ?: 0.0,
+                        watchMaterial = d.watch ?: "—",
+                        trend = d.trend,
+                        updatedSecondsAgo = d.updatedSecondsAgo,
+                        trendText = d.trendText.orEmpty(),
+                        heat = d.radiantSignal,
+                        igniterOn = d.igniterOn,
+                        source = if (d.isLive) "" else "SAFFIRE-III flight replay · archived NASA data",
+                        isLive = d.isLive,
+                    ),
+                )
+            }
+            delay(5_000)
+        }
+    }
 }

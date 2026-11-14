@@ -129,3 +129,22 @@ data class ApiErrorBody(
     val message: String? = null,
     val errors: Map<String, List<String>>? = null,
 )
+
+// ---- fire-risk status (GET /risk/current)
+@Serializable
+data class RiskDto(
+    val index: Int = 0,
+    val level: String? = null,
+    @SerialName("radiant_signal") val radiantSignal: Double? = null,
+    val airflow: Double? = null,
+    @SerialName("igniter_on") val igniterOn: Boolean = false,
+    val o2: Double? = null,
+    val pressure: Double? = null,
+    val watch: String? = null,
+    val trend: List<Float> = emptyList(),
+    @SerialName("trend_text") val trendText: String? = null,
+    @SerialName("updated_seconds_ago") val updatedSecondsAgo: Int = 0,
+    val source: String? = null,
+    @SerialName("is_live") val isLive: Boolean = false,
+)
+

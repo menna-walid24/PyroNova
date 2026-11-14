@@ -29,4 +29,7 @@ interface PyronovaApi {
     @GET("guide") suspend fun guide(): ResponseBody
 
     @POST("simulate") suspend fun simulate(): SimulateResponse
+
+    /** Fire-risk status: replay of real NASA SAFFIRE-III flight telemetry (proxied from the AI service). */
+    @GET("risk/current") suspend fun riskCurrent(): RiskDto
 }

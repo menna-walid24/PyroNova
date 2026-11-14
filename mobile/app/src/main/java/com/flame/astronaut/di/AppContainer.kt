@@ -61,7 +61,7 @@ class AppContainer(context: Context) {
         if (useFake) FakeGuideRepository() else RealGuideRepository(appContext, network.api)
     val chatRepository: ChatRepository =
         if (useFake) FakeChatRepository(appContext) else RealChatRepository(network.api)
-    val riskRepository: RiskRepository = if (useFake) FakeRiskRepository() else RealRiskRepository()
+    val riskRepository: RiskRepository = if (useFake) FakeRiskRepository() else RealRiskRepository(network.api)
     val healthRepository: HealthRepository = if (useFake) FakeHealthRepository() else RealHealthRepository()
 
     val emergencyCoordinator = EmergencyCoordinator(appContext, emergencyRepository, appScope)
