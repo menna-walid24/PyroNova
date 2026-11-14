@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\RiskController;
+
 use Illuminate\Support\Facades\Route;
 use App\Models\Steps;
 use App\Http\Controllers\UserProfileController;
@@ -10,10 +12,13 @@ use App\Http\Controllers\SimulateFireController;
 use App\Http\Controllers\StepsController;
 use App\Http\Controllers\UpdateFcmTokenController;
 use App\Http\Controllers\UpdateAssignedModuleController;
+use App\Http\Controllers\GuidelinesController;
+use App\Http\Controllers\ExperimentsController;
 Route::get('/guide',[StepsController::class,'index']);
 Route::put('/reset-module',[UpdateAssignedModuleController::class,'update'])->middleware('auth:sanctum');
 Route::put('/fcm-token',[UpdateFcmTokenController::class,'update'])->middleware('auth:sanctum');
 Route::post('/simulate',[SimulateFireController::class,'sem'])->middleware('auth:sanctum');
+Route::get('/risk/current',[RiskController::class,'current'])->middleware('auth:sanctum');
 Route::get('/me',[UserProfileController::class,'show'])->middleware('auth:sanctum');
 Route::post('/ask',[ChatbotController::class,'sendmessages'])->middleware('auth:sanctum');
 Route::get('/chats',[ChatController::class,'index'])->middleware('auth:sanctum');
@@ -21,3 +26,8 @@ Route::post('/chats',[ChatController::class,'store'])->middleware('auth:sanctum'
 Route::get('/chats/{id}',[ChatController::class,'show'])->middleware('auth:sanctum');
 Route::get('/guidlines',[GuidelinesController::class,'show'])->middleware('auth:sanctum');
 Route::patch('/guidlines/select',[GuidelinesController::class,'select'])->middleware('auth:sanctum');
+// Experiments page (order matters: compare / earth-impact before {id})
+Route::get('/experiments',[ExperimentsController::class,'index']);
+Route::get('/experiments/compare',[ExperimentsController::class,'compare']);
+Route::get('/experiments/earth-impact',[ExperimentsController::class,'earthImpact']);
+Route::get('/experiments/{id}',[ExperimentsController::class,'show']);
