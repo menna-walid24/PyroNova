@@ -1,0 +1,218 @@
+{
+  "question": "How does oxygen concentration affect burn time in microgravity?",
+  "answer": "In microgravity, enriched oxygen (33–40%) is associated with substantially longer burn times than air-like oxygen (18–23%). Across 179 ISS tests, the median burn time was 50.0 s at enriched oxygen versus 8.0 s at air-like oxygen, with maximums of 304.0 s versus 20.0 s. Every flame at air-like oxygen that ignited self-extinguished, whereas 30 enriched-oxygen tests were still burning when the fuel flow was cut. No tests exist between 23.5% and 33% oxygen, so the exact transition cannot be determined from these data. The 33–40% oxygen levels are ISS test-chamber conditions, not spacecraft cabin air (~21%).",
+  "experimental_evidence": [
+    {
+      "experiment_id": "CFI-21106-G6",
+      "oxygen_concentration": null,
+      "burn_time_s": null,
+      "peak_burner_temp_c": null,
+      "source": "EVIDENCE 1",
+      "finding": "Referenced as among longest-burning tests at air-like oxygen (18–23%); group median burn time 8.0 s, longest 20.0 s; all lit flames self-extinguished."
+    },
+    {
+      "experiment_id": "CFI-21106-G7",
+      "oxygen_concentration": null,
+      "burn_time_s": null,
+      "peak_burner_temp_c": null,
+      "source": "EVIDENCE 1",
+      "finding": "Referenced as among longest-burning tests at air-like oxygen (18–23%); group median burn time 8.0 s, longest 20.0 s; all lit flames self-extinguished."
+    },
+    {
+      "experiment_id": "CFI-21162-C1",
+      "oxygen_concentration": null,
+      "burn_time_s": null,
+      "peak_burner_temp_c": null,
+      "source": "EVIDENCE 1",
+      "finding": "Referenced as among longest-burning tests at air-like oxygen (18–23%); group median burn time 8.0 s, longest 20.0 s; all lit flames self-extinguished."
+    },
+    {
+      "experiment_id": "CFI-21162-A4",
+      "oxygen_concentration": null,
+      "burn_time_s": null,
+      "peak_burner_temp_c": null,
+      "source": "EVIDENCE 1",
+      "finding": "Referenced as among longest-burning tests at enriched oxygen (33–40%); group median burn time 50.0 s, longest 304.0 s; 30 tests still burning when fuel cut."
+    },
+    {
+      "experiment_id": "CFI-21153-C4",
+      "oxygen_concentration": null,
+      "burn_time_s": null,
+      "peak_burner_temp_c": null,
+      "source": "EVIDENCE 1",
+      "finding": "Referenced as among longest-burning tests at enriched oxygen (33–40%); group median burn time 50.0 s, longest 304.0 s; 30 tests still burning when fuel cut."
+    },
+    {
+      "experiment_id": "CFI-21153-A5",
+      "oxygen_concentration": null,
+      "burn_time_s": null,
+      "peak_burner_temp_c": null,
+      "source": "EVIDENCE 1",
+      "finding": "Referenced as among longest-burning tests at enriched oxygen (33–40%); group median burn time 50.0 s, longest 304.0 s; 30 tests still burning when fuel cut."
+    },
+    {
+      "experiment_id": "CFI-21174-F1",
+      "oxygen_concentration": 39.08,
+      "burn_time_s": 40.0,
+      "peak_burner_temp_c": 258.0,
+      "source": "EVIDENCE 3",
+      "finding": "30% butane at 39.08% O2 ignited and self-extinguished after 40.0 s; peak burner temperature 258.0 °C; cool flame observed."
+    },
+    {
+      "experiment_id": "CFI-21174-C2",
+      "oxygen_concentration": 39.65,
+      "burn_time_s": 29.0,
+      "peak_burner_temp_c": 190.0,
+      "source": "EVIDENCE 4",
+      "finding": "30% butane at 39.65% O2 ignited and self-extinguished after 29.0 s; peak burner temperature 190.0 °C; cool flame not reported."
+    },
+    {
+      "experiment_id": "CFI-21174-C1",
+      "oxygen_concentration": 39.85,
+      "burn_time_s": 30.0,
+      "peak_burner_temp_c": 156.0,
+      "source": "EVIDENCE 5",
+      "finding": "30% butane at 39.85% O2 ignited and self-extinguished after 30.0 s; peak burner temperature 156.0 °C; cool flame not reported."
+    },
+    {
+      "experiment_id": "CFI-21125-K1",
+      "oxygen_concentration": 39.41,
+      "burn_time_s": 35.0,
+      "peak_burner_temp_c": 227.0,
+      "source": "EVIDENCE 6",
+      "finding": "30% butane at 39.41% O2 ignited and self-extinguished after 35.0 s; peak burner temperature 227.0 °C; cool flame not examined on this test day."
+    }
+  ],
+  "prediction": [
+    {
+      "experiment_id": "CFI-21174-F1",
+      "label": "no_fire",
+      "probability": 0.4933,
+      "riskBand": "MED",
+      "predicted_end_mode": "flow_terminated",
+      "end_mode_probabilities": {
+        "no_ignition": 0.0145,
+        "self_extinguished": 0.4922,
+        "flow_terminated": 0.4933
+      },
+      "p_hot_ignition": 0.9855,
+      "predicted_burn_time_s": 41.9,
+      "hazard_index": 42.8,
+      "level": "MED",
+      "model": {
+        "ignition": "random_forest",
+        "sustained": "logreg",
+        "burn_time": "random_forest"
+      },
+      "caveats": [
+        "O2 levels above ~23% in these tests (33-40%) are ISS test-chamber conditions, not a spacecraft cabin atmosphere (ISS air is ~21%)."
+      ],
+      "observed_end_mode": "self_extinguished",
+      "observed_burn_time_s": 40.0
+    },
+    {
+      "experiment_id": "CFI-21174-C2",
+      "label": "no_fire",
+      "probability": 0.2871,
+      "riskBand": "MED",
+      "predicted_end_mode": "self_extinguished",
+      "end_mode_probabilities": {
+        "no_ignition": 0.0482,
+        "self_extinguished": 0.6647,
+        "flow_terminated": 0.2871
+      },
+      "p_hot_ignition": 0.9518,
+      "predicted_burn_time_s": 34.0,
+      "hazard_index": 32.9,
+      "level": "MED",
+      "model": {
+        "ignition": "random_forest",
+        "sustained": "logreg",
+        "burn_time": "random_forest"
+      },
+      "caveats": [
+        "O2 levels above ~23% in these tests (33-40%) are ISS test-chamber conditions, not a spacecraft cabin atmosphere (ISS air is ~21%)."
+      ],
+      "observed_end_mode": "self_extinguished",
+      "observed_burn_time_s": 29.0
+    },
+    {
+      "experiment_id": "CFI-21174-C1",
+      "label": "no_fire",
+      "probability": 0.0381,
+      "riskBand": "MED",
+      "predicted_end_mode": "self_extinguished",
+      "end_mode_probabilities": {
+        "no_ignition": 0.0569,
+        "self_extinguished": 0.905,
+        "flow_terminated": 0.0381
+      },
+      "p_hot_ignition": 0.9431,
+      "predicted_burn_time_s": 30.2,
+      "hazard_index": 22.6,
+      "level": "MED",
+      "model": {
+        "ignition": "random_forest",
+        "sustained": "logreg",
+        "burn_time": "random_forest"
+      },
+      "caveats": [
+        "O2 levels above ~23% in these tests (33-40%) are ISS test-chamber conditions, not a spacecraft cabin atmosphere (ISS air is ~21%)."
+      ],
+      "observed_end_mode": "self_extinguished",
+      "observed_burn_time_s": 30.0
+    },
+    {
+      "experiment_id": "CFI-21125-K1",
+      "label": "no_fire",
+      "probability": 0.2089,
+      "riskBand": "LOW",
+      "predicted_end_mode": "no_ignition",
+      "end_mode_probabilities": {
+        "no_ignition": 0.5921,
+        "self_extinguished": 0.199,
+        "flow_terminated": 0.2089
+      },
+      "p_hot_ignition": 0.4079,
+      "predicted_burn_time_s": 48.2,
+      "hazard_index": 18.4,
+      "level": "LOW",
+      "model": {
+        "ignition": "random_forest",
+        "sustained": "logreg",
+        "burn_time": "random_forest"
+      },
+      "caveats": [
+        "O2 levels above ~23% in these tests (33-40%) are ISS test-chamber conditions, not a spacecraft cabin atmosphere (ISS air is ~21%)."
+      ],
+      "observed_end_mode": "self_extinguished",
+      "observed_burn_time_s": 35.0
+    }
+  ],
+  "observed_trends": [
+    ", {"
+  ],
+  "interpretation": "...",
+  "safety_insight": "...",
+  "limitations": [
+    "The 33-40% oxygen levels in these tests are ISS test-chamber conditions, not a spacecraft cabin atmosphere (ISS cabin air is about 21%)."
+  ],
+  "sources": [
+    "SUMMARY-OXYGEN",
+    "SUMMARY-DATASET",
+    "CFI-21174-F1",
+    "CFI-21174-C2",
+    "CFI-21174-C1",
+    "CFI-21125-K1"
+  ],
+  "model_used": "nvidia/nemotron-3.5-super-vl:free",
+  "answerability": {
+    "answerable": true,
+    "decision": "knowledge_base",
+    "reason": "No explicit experiment ID to validate.",
+    "top_score": 10.0,
+    "query_coverage": 1.0,
+    "candidate_count": 6
+  },
+  "prediction_notice": "ML predictions are trained on 175 real ISS tests (NASA PSI-159 CFI-G) and are not certified fire-safety guidance."
+}

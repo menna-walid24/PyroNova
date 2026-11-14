@@ -1,0 +1,16 @@
+---
+experiment_id: PSI-DOC-pubs-PSI-25
+doc_type: nasa_psi
+psi_source_type: publications
+investigation_id: PSI-25
+source_url: https://psi.nasa.gov/physci/repo/data/investigations/PSI-25
+doi: 
+---
+
+# Publications for BASS-II
+
+## Summary
+
+Publications linked to BASS-II (PSI-25): Microgravity flammability boundary for PMMA rods in axial stagnation flow: Experimental results and energy balance analyses (Olson Sandra L., Ferkul Paul V.) | Temperature and CO2 fields of a downward spreading flame over thin cellulose: A comparison of experimental and computational results (Bhattacharjee Subrata, Paolini Christopher, Tran Wynn, Villaraza Jeanie Ray, Takahashi Shuhei) | Opposed-flow flame spread: A comparison of microgravity and normal gravity experiments to establish the thermal regime (Bhattacharjee Subrata, Laue Matthew, Carmignani Luca, Ferkul Paul, Olson Sandra) | The critical flow velocity for radiative extinction in opposed-flow flame spread in a microgravity environment: A comparison of experimental, computational, and theoretical results (Bhattacharjee Subrata, Simsek Aslihan, Olson Sandra, Ferkul Paul) | Experimental validation of a correlation capturing the boundary layer effect on spread rate in the kinetic regime of opposed-flow flame spread (Bhattacharjee Subrata, Tran Wynn, Laue Matthew, Paolini Christopher, Nakamura Yuji) | Results from on-board CSA-CP and CDM Sensor Readings during the Burning and Suppression of Solids - II (BASS-II) Experiment in the Microgravity Science Glovebox (MSG) (SL Olson, PV Ferkul, S Bhattacharjee, FJ Miller, C Fernandez-Pello, S Link, JS Tien, I Wichman) | Modeling and Analysis of Intermediate Thickness PMMA Sheets Burning in Microgravity Opposed Flow (TJ Shah, FJ Miller, S Olson, I Wichman) | Concurrent flame growth, spread and extinction over composite fabric samples in low speed purely forced flow in microgravity (X Zhao, JS Tien, PV Ferkul, S. Olson) | Radiative, thermal, and kinetic regimes of opposed-flow flame spread: A comparison between experiment and theory (Bhattacharjee Subrata, Simsek Aslihan, Miller Fletcher, Olson Sandra, Ferkul Paul) | Concurrent flame growth, spread, and quenching over composite fabric samples in low speed purely forced flow in microgravity (Zhao Xiaoyang, Liao Ya-Ting T., Johnston Michael C., T'ien James S., Ferkul Paul V., Olson Sandra L.) | A Study of the Effectiveness of a Narrow Channel Apparatus in Simulating Microgravity Flame Spread over Thin Fuels (Pepper Jacob, Miller Fletcher, Olson Sandra, Wichman Indrek) | BASS-II Summary Report (J Marcum, S Olson, P Ferkul) | Correlation of normal gravity mixed convection blowoff limits with microgravity forced flow blowoff limits (JW Marcum, SL Olson, PV Ferkul) | Fire in Microgravity (Hariharan Ashwin, Miller Fletcher, Olson Sandra, Wichman Indrek) | Microgravity Flammability of PMMA Rods in Concurrent Flow (SL Olson, PV Ferkul) | Using a Narrow Channel Apparatus to Study Thermally-Intermediate Fuel Combustion in a Simulated 0g Environment (G Bornand, G Sullivan, T Shah, F Miller) | Burning and Suppression of Solids – II Fire Safety Investigation for the Microgravity Science Glovebox (SL Olson, PV Ferkul, S Bhattacharjee, FJ Miller, AC Fernandez-Pello, JS Tien)
+
+Source: https://psi.nasa.gov/physci/repo/data/investigations/PSI-25

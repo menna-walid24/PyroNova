@@ -1,0 +1,18 @@
+{
+  "question": "hello",
+  "answer": "Hello! 👋 I'm the Flame in Freefall Research Assistant. You can chat with me or ask about NASA microgravity combustion experiments, flame behavior, and fire-risk predictions.",
+  "experimental_evidence": [],
+  "prediction": null,
+  "observed_trends": [],
+  "interpretation": "",
+  "safety_insight": "",
+  "limitations": [],
+  "sources": [],
+  "model_used": "conversation_handler",
+  "answerability": {
+    "answerable": true,
+    "decision": "conversation",
+    "reason": "Handled by the conversational assistant."
+  },
+  "prediction_notice": "ML predictions are trained on 175 real ISS tests (NASA PSI-159 CFI-G) and are not certified fire-safety guidance."
+}

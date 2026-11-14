@@ -1,0 +1,176 @@
+{
+  "question": "ايه اكتر وقود خطر في التجارب؟",
+  "answer": "الإيثان (Ethane) هو أكثر الوقود خطورة في المتوسط بناءً على الأدلة المسترجعة، حيث سجل أعلى متوسط لمؤشر الخطر (37.5/100) وأطول وقت احتراق في البيانات (304 ثانية في اختبار CFI-21162-A4). ومع ذلك، سجل اختبار واحد للبيوتان المخفف (30% butane) أعلى مؤشر خطر فردي على الإطلاق (100/100 في اختبار CFI-21291-C1). يجب ملاحظة أن المقارنة ليست مضبوطة لأن الوقود اختُبرت في أيام مختلفة وتحت مستويات مختلفة من الأكسجين والضغط.",
+  "experimental_evidence": [
+    {
+      "experiment_id": "CFI-21162-A4",
+      "oxygen_concentration": 37.21,
+      "burn_time_s": 304.0,
+      "peak_burner_temp_c": null,
+      "source": "SUMMARY-EXTREMES (أطول وقت احتراق)",
+      "finding": "30% إيثان؛ أطول وقت احتراق في البيانات (304 ثانية)؛ انتهى بإخماد ذاتي."
+    },
+    {
+      "experiment_id": "CFI-21153-C4",
+      "oxygen_concentration": 38.89,
+      "burn_time_s": 276.0,
+      "peak_burner_temp_c": null,
+      "source": "SUMMARY-EXTREMES (أعلى مؤشر خطر)",
+      "finding": "30% إيثان؛ مؤشر خطر 96.4/100؛ انتهى بإنهاء التدفق (flow_terminated)."
+    },
+    {
+      "experiment_id": "CFI-21153-A5",
+      "oxygen_concentration": 33.24,
+      "burn_time_s": 274.0,
+      "peak_burner_temp_c": null,
+      "source": "SUMMARY-EXTREMES (أعلى مؤشر خطر)",
+      "finding": "30% إيثان؛ مؤشر خطر 96.1/100؛ انتهى بإنهاء التدفق (flow_terminated)."
+    },
+    {
+      "experiment_id": "CFI-21291-C1",
+      "oxygen_concentration": 39.42,
+      "burn_time_s": 246.0,
+      "peak_burner_temp_c": null,
+      "source": "SUMMARY-EXTREMES (أعلى مؤشر خطر)",
+      "finding": "30% بيوتان؛ أعلى مؤشر خطر فردي 100.0/100؛ انتهى بإنهاء التدفق (flow_terminated)."
+    },
+    {
+      "experiment_id": "CFI-21088-A1",
+      "oxygen_concentration": 39.39,
+      "burn_time_s": 50.0,
+      "peak_burner_temp_c": 290.6,
+      "source": "إثبات تجريبي 3 / اختبار ISS من PSI-159 CFI-G",
+      "finding": "إيثان نقي؛ مؤشر خطر 27.5/100 (متوسط)؛ انتهى بإخماد ذاتي بعد 50 ثانية."
+    },
+    {
+      "experiment_id": "CFI-21088-B1",
+      "oxygen_concentration": 38.98,
+      "burn_time_s": 43.0,
+      "peak_burner_temp_c": 276.0,
+      "source": "إثبات تجريبي 4 / اختبار ISS من PSI-159 CFI-G",
+      "finding": "إيثان نقي؛ مؤشر خطر 25.8/100 (متوسط)؛ انتهى بإخماد ذاتي بعد 43 ثانية."
+    },
+    {
+      "experiment_id": "CFI-21088-H2",
+      "oxygen_concentration": 36.45,
+      "burn_time_s": null,
+      "peak_burner_temp_c": null,
+      "source": "SUMMARY-EXTREMES (أعلى مؤشر خطر)",
+      "finding": "إيثان نقي؛ مؤشر خطر 74.0/100 (عالي)؛ انتهى بإنهاء التدفق (flow_terminated)."
+    }
+  ],
+  "prediction": [
+    {
+      "experiment_id": "CFI-21088-A1",
+      "label": "no_fire",
+      "probability": 0.3779,
+      "riskBand": "MED",
+      "predicted_end_mode": "self_extinguished",
+      "end_mode_probabilities": {
+        "no_ignition": 0.0225,
+        "self_extinguished": 0.5996,
+        "flow_terminated": 0.3779
+      },
+      "p_hot_ignition": 0.9775,
+      "predicted_burn_time_s": 44.6,
+      "hazard_index": 39.0,
+      "level": "MED",
+      "model": {
+        "ignition": "random_forest",
+        "sustained": "logreg",
+        "burn_time": "random_forest"
+      },
+      "caveats": [
+        "O2 levels above ~23% in these tests (33-40%) are ISS test-chamber conditions, not a spacecraft cabin atmosphere (ISS air is ~21%)."
+      ],
+      "observed_end_mode": "self_extinguished",
+      "observed_burn_time_s": 50.0
+    },
+    {
+      "experiment_id": "CFI-21088-B1",
+      "label": "no_fire",
+      "probability": 0.3594,
+      "riskBand": "MED",
+      "predicted_end_mode": "self_extinguished",
+      "end_mode_probabilities": {
+        "no_ignition": 0.012,
+        "self_extinguished": 0.6286,
+        "flow_terminated": 0.3594
+      },
+      "p_hot_ignition": 0.988,
+      "predicted_burn_time_s": 46.2,
+      "hazard_index": 39.0,
+      "level": "MED",
+      "model": {
+        "ignition": "random_forest",
+        "sustained": "logreg",
+        "burn_time": "random_forest"
+      },
+      "caveats": [
+        "O2 levels above ~23% in these tests (33-40%) are ISS test-chamber conditions, not a spacecraft cabin atmosphere (ISS air is ~21%)."
+      ],
+      "observed_end_mode": "self_extinguished",
+      "observed_burn_time_s": 43.0
+    },
+    {
+      "experiment_id": "CFI-21088-C1",
+      "label": "no_fire",
+      "probability": 0.3406,
+      "riskBand": "MED",
+      "predicted_end_mode": "self_extinguished",
+      "end_mode_probabilities": {
+        "no_ignition": 0.012,
+        "self_extinguished": 0.6474,
+        "flow_terminated": 0.3406
+      },
+      "p_hot_ignition": 0.988,
+      "predicted_burn_time_s": 42.5,
+      "hazard_index": 37.5,
+      "level": "MED",
+      "model": {
+        "ignition": "random_forest",
+        "sustained": "logreg",
+        "burn_time": "random_forest"
+      },
+      "caveats": [
+        "O2 levels above ~23% in these tests (33-40%) are ISS test-chamber conditions, not a spacecraft cabin atmosphere (ISS air is ~21%)."
+      ],
+      "observed_end_mode": "self_extinguished",
+      "observed_burn_time_s": 42.0
+    }
+  ],
+  "observed_trends": [
+    ":{",
+    "observed_trends"
+  ],
+  "interpretation": "تشير الأدلة إلى أن الإيثان يمثل أعلى خطر عام في هذه التجارب من حيث متوسط مؤشر الخطر ومدة الاحتراق القصوى، بينما يمكن لخلطات البيوتان أن تصل إلى مؤشر خطر أقصى فردي (100/100). ومع ذلك، لم تكن المقارنة بين الوقود مضبوطة: اختُبرت الوقود في أيام مختلفة وتحت تركيزات أكسجين وضغوط مختلفة، لذا لا يمكن الجزم بأن الاختلاف في الخطر يعود فقط لنوع الوقود. كما أن مستويات الأكسجين العالية (33-40%) هي ظروف غرفة اختبار على محطة الفضاء الدولية، وليست أجواء cabine المحطة (حوالي 21%).",
+  "safety_insight": "في ظروف الأكسجين المرتفعة المستخدمة في الاختبارات، يمكن للإيثان والبيوتان أن يشتعلوا ويستمروا في الاحتراق حتى بعد قطع وقود التدفق (flow_terminated)، مما يشير إلى خطر استمرار الحريق في بيئات غنية بالأكسجين. هذه النتائج تخص ظروف الاختبار ولا تُطبَّق مباشرة على أجواء cabine محطة الفضاء العادية.",
+  "limitations": [
+    "المقارنة بين الوقود ليست مضبوطة؛ اختُبرت الوقود في أيام مختلفة وتحت مستويات مختلفة من الأكسجين (18-40%) والضغط (50-304 كيلوباسكال).",
+    "قيم درجة حرارة الموقد القصوى غير متوفرة لمعظم اختبارات extremes (مثل CFI-21162-A4 و CFI-21291-C1).",
+    "تنبؤات نموذج التعلم الآلي هي أبحاثية وغير معتمدة كإرشادات أمان حريق معتمدة؛ لم يُطلب تنبؤ محدد لهذا السؤال العام، لذا الحقل prediction هو null.",
+    "مستويات الأكسجين 33-40% هي ظروف غرفة اختبار على محطة الفضاء الدولية، وليست أجواء cabine المحطة (حوالي 21%).",
+    "لا توجد بيانات في نطاق الأكسجين 23.5-33%، لذا لا يمكن الاستنتاج داخل هذه الفجوة.",
+    "تم فحص اللهجات الباردة فقط في أيام الاختبار 21174 و 21291؛ في الأيام الأخرى cool_flame=false تعني 'لم يُفحص' وليس 'لا توجد لهب بارد'.",
+    "The 33-40% oxygen levels in these tests are ISS test-chamber conditions, not a spacecraft cabin atmosphere (ISS cabin air is about 21%)."
+  ],
+  "sources": [
+    "CFI-21162-A4",
+    "CFI-21153-C4",
+    "CFI-21153-A5",
+    "CFI-21291-C1",
+    "CFI-21088-A1",
+    "CFI-21088-B1",
+    "CFI-21088-H2"
+  ],
+  "model_used": "nvidia/nemotron-3.5-super-vl:free",
+  "answerability": {
+    "answerable": false,
+    "decision": "llm_fallback",
+    "reason": "Insufficient query-term coverage.",
+    "top_score": 10.0,
+    "query_coverage": 0.0,
+    "candidate_count": 8
+  },
+  "prediction_notice": "ML predictions are trained on 175 real ISS tests (NASA PSI-159 CFI-G) and are not certified fire-safety guidance."
+}

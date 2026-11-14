@@ -1,0 +1,90 @@
+{
+  "answer": "In microgravity ISS tests, oxygen-enriched atmospheres (33-40% O2) were associated with more frequent ignition, longer burn times (median 50.0 s versus 8.0 s), and flames that continued burning until the fuel flow was cut. At air-like oxygen (18-23%), every lit flame self-extinguished and none burned until fuel cutoff. The exact oxygen concentration where this behavior changes cannot be determined because no tests were performed between 23.5% and 33% oxygen.}",
+  "experimental_evidence": [
+    {
+      "experiment_id": "CFI-21106-G6",
+      "oxygen_concentration": null,
+      "burn_time_s": null,
+      "peak_burner_temp_c": null,
+      "source": "SUMMARY-OXYGEN",
+      "finding": "One of the longest-burning tests in the air-like oxygen group (18.0-23.4%); all flames in this group self-extinguished, with group median burn time 8.0 s and longest 20.0 s."
+    },
+    {
+      "experiment_id": "CFI-21106-G7",
+      "oxygen_concentration": null,
+      "burn_time_s": null,
+      "peak_burner_temp_c": null,
+      "source": "SUMMARY-OXYGEN",
+      "finding": "One of the longest-burning tests in the air-like oxygen group (18.0-23.4%); all flames in this group self-extinguished, with group median burn time 8.0 s and longest 20.0 s."
+    },
+    {
+      "experiment_id": "CFI-21162-C1",
+      "oxygen_concentration": null,
+      "burn_time_s": null,
+      "peak_burner_temp_c": null,
+      "source": "SUMMARY-OXYGEN",
+      "finding": "One of the longest-burning tests in the air-like oxygen group (18.0-23.4%); all flames in this group self-extinguished, with group median burn time 8.0 s and longest 20.0 s."
+    },
+    {
+      "experiment_id": "CFI-21162-A4",
+      "oxygen_concentration": null,
+      "burn_time_s": null,
+      "peak_burner_temp_c": null,
+      "source": "SUMMARY-OXYGEN",
+      "finding": "One of the longest-burning tests in the enriched oxygen group (33.2-40.0%); 30 tests in this group were still burning when fuel flow was cut, with group median burn time 50.0 s and longest 304.0 s."
+    },
+    {
+      "experiment_id": "CFI-21153-C4",
+      "oxygen_concentration": null,
+      "burn_time_s": null,
+      "peak_burner_temp_c": null,
+      "source": "SUMMARY-OXYGEN",
+      "finding": "One of the longest-burning tests in the enriched oxygen group (33.2-40.0%); 30 tests in this group were still burning when fuel flow was cut, with group median burn time 50.0 s and longest 304.0 s."
+    },
+    {
+      "experiment_id": "CFI-21153-A5",
+      "oxygen_concentration": null,
+      "burn_time_s": null,
+      "peak_burner_temp_c": null,
+      "source": "SUMMARY-OXYGEN",
+      "finding": "One of the longest-burning tests in the enriched oxygen group (33.2-40.0%); 30 tests in this group were still burning when fuel flow was cut, with group median burn time 50.0 s and longest 304.0 s."
+    }
+  ],
+  "prediction": null,
+  "observed_trends": [
+    ":{",
+    "trend",
+    "Higher oxygen concentration (33-40%) is associated with higher ignition fraction, longer burn times, and more flames burning until fuel cutoff compared to air-like oxygen (18-23%).",
+    "evidence_status",
+    "supported",
+    "explanation",
+    "In the 18.0-23.4% oxygen group (64 tests), 41 ignited, all 41 self-extinguished, median burn time was 8.0 s and longest was 20.0 s. In the 33.2-40.0% oxygen group (115 tests), 91 ignited, 61 self-extinguished and 30 were still burning when fuel flow was cut, median burn time was 50.0 s and longest was 304.0 s. Mean hazard index was 10.9/100 for air-like oxygen versus 34.8/100 for enriched oxygen.",
+    "experiment_ids",
+    "CFI-21106-G6",
+    "CFI-21106-G7",
+    "CFI-21162-C1",
+    "CFI-21162-A4",
+    "CFI-21153-C4",
+    "CFI-21153-A5"
+  ],
+  "interpretation": "The retrieved ISS experiments show an association between oxygen concentration and flame behavior in microgravity: enriched oxygen (33-40%) coincided with more sustained burning and higher hazard index than air-like oxygen (18-23%). However, because fuel type, dilution, pressure, and flow rate varied across tests, this should not be interpreted as proof that oxygen concentration alone caused the difference. The evidence is limited to the tested conditions and does not establish a causal relationship. Cool flame observations are limited to test days 21174 and 21291; on other days cool_flame=false means the parameter was not examined.",
+  "safety_insight": "Oxygen-enriched test-chamber conditions (33-40% O2) produced a higher mean hazard index (34.8/100) and flames that would not self-extinguish, indicating greater fire-safety concern in oxygen-enriched environments. These levels are ISS test-chamber conditions, not spacecraft cabin atmosphere (about 21% O2), so cabin-relevant conclusions should be drawn cautiously from the air-like oxygen group, where flames tended to self-extinguish.",
+  "limitations": [
+    "No tests exist between 23.5% and 33% oxygen, so the transition threshold cannot be identified and no values should be interpolated in that range.",
+    "Exact oxygen_concentration, burn_time_s, and peak_burner_temp_c values for the cited experiment IDs are not provided in the summary evidence; only group-level statistics are available.",
+    "Multiple experimental conditions (fuel, nitrogen dilution, pressure, fuel flow) varied simultaneously, so the observed association cannot be attributed to oxygen concentration alone.",
+    "The 33-40% oxygen levels are ISS test-chamber conditions, not a spacecraft cabin atmosphere (ISS cabin air is about 21%).",
+    "No machine-learning prediction is available; prediction is null and should not be treated as fire-safety guidance.",
+    "Cool flame data were only examined on test days 21174 and 21291; on other days cool_flame=false means not examined, not absence of cool flames."
+  ],
+  "sources": [
+    "CFI-21106-G6",
+    "CFI-21106-G7",
+    "CFI-21162-C1",
+    "CFI-21162-A4",
+    "CFI-21153-C4",
+    "CFI-21153-A5"
+  ],
+  "model_used": "nvidia/nemotron-3.5-super-vl:free",
+  "source": "llm_fallback"
+}

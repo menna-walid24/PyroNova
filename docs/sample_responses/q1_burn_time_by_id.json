@@ -1,0 +1,69 @@
+{
+  "question": "What was the burn time in experiment CFI-21153-A5 and how did it end?",
+  "answer": "Experiment CFI-21153-A5 burned for 274.0 s and ended in flow_terminated mode, meaning the hot flame was still burning when the crew cut the fuel flow; it did not self-extinguish. Peak burner temperature was 421.3 °C. Hazard index was 96.1/100 (high).",
+  "experimental_evidence": [
+    {
+      "experiment_id": "CFI-21153-A5",
+      "oxygen_concentration": 33.24,
+      "burn_time_s": 274.0,
+      "peak_burner_temp_c": 421.3,
+      "source": "PSI-159 (CFI-G) ISS microgravity test",
+      "finding": "Hot ignition occurred (True). The flame burned for 274.0 s and ended by flow_termination (fuel flow cut while still burning). Peak burner temperature was 421.3 °C. Hazard index was 96.1/100 (high)."
+    }
+  ],
+  "prediction": {
+    "experiment_id": "CFI-21153-A5",
+    "label": "no_fire",
+    "probability": 0.3852,
+    "riskBand": "HIGH",
+    "predicted_end_mode": "self_extinguished",
+    "end_mode_probabilities": {
+      "no_ignition": 0.115,
+      "self_extinguished": 0.4998,
+      "flow_terminated": 0.3852
+    },
+    "p_hot_ignition": 0.885,
+    "predicted_burn_time_s": 170.5,
+    "hazard_index": 53.5,
+    "level": "HIGH",
+    "model": {
+      "ignition": "random_forest",
+      "sustained": "logreg",
+      "burn_time": "random_forest"
+    },
+    "caveats": [
+      "O2 levels above ~23% in these tests (33-40%) are ISS test-chamber conditions, not a spacecraft cabin atmosphere (ISS air is ~21%)."
+    ],
+    "observed_end_mode": "flow_terminated",
+    "observed_burn_time_s": 274.0
+  },
+  "observed_trends": [
+    ":",
+    "trend",
+    "evidence_status",
+    "explanation",
+    "experiment_ids"
+  ],
+  "interpretation": "The experimental observation for CFI-21153-A5 is unambiguous: the 30% ethane flame ignited under 33.24% O2 and 50.7 kPa, burned for 274.0 s, and was terminated by stopping the fuel flow (flow_terminated), reaching a peak burner temperature of 421.3 °C. This observed outcome differs from the ML model's prediction, which labeled the case as no_fire with probability 0.3852, predicted a burn time of 170.5 s, and predicted self_extinguished as the most likely end mode. The prediction is a research/educational model output, not an experimental measurement, and should not be treated as certified fire-safety guidance.",
+  "safety_insight": "Under ISS test-chamber conditions with 33.24% oxygen, a 30% ethane diffusion flame can sustain burning for over four minutes and present a high hazard index (96.1/100), requiring manual fuel cutoff to terminate; this indicates elevated fire risk in oxygen-enriched test environments, not representative of normal ISS cabin air (~21% O2).",
+  "limitations": [
+    "The conclusion is based on a single experiment (CFI-21153-A5); results may not generalize to other fuels, dilutions, pressures, or oxygen concentrations.",
+    "Cool flame status for this test day is 'not examined' (cool flames were only examined on test days 21174 and 21291), so cool_flame=false does not confirm the absence of cool flames.",
+    "The oxygen concentration of 33.24% is an ISS test-chamber condition, not a spacecraft cabin atmosphere; ISS cabin air is about 21% oxygen.",
+    "The ML prediction is a research model trained on 175 real ISS tests and is not certified fire-safety guidance; it disagreed with the observed outcome (predicted no_fire/self_extinguished vs observed flow_terminated/274.0 s).",
+    "There is no experimental data in the 23.5–33% oxygen range, so no interpolation within that gap is possible."
+  ],
+  "sources": [
+    "CFI-21153-A5"
+  ],
+  "model_used": "nvidia/nemotron-3.5-super-vl:free",
+  "answerability": {
+    "answerable": true,
+    "decision": "knowledge_base",
+    "reason": "Experiment CFI-21153-A5 contains a numeric value for burn time.",
+    "top_score": 5.148768424987793,
+    "query_coverage": 0.875,
+    "candidate_count": 4
+  },
+  "prediction_notice": "ML predictions are trained on 175 real ISS tests (NASA PSI-159 CFI-G) and are not certified fire-safety guidance."
+}

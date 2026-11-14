@@ -1,0 +1,170 @@
+{
+  "PSI-10": {
+    "crew_safety_relevance": "Not stated in the source.",
+    "earth_impact": "This project has the potential for improving efficiency and reducing pollutant emissions in terrestrial combustors.",
+    "summary": "The experiment studied spherical diffusion flames of gaseous fuels in microgravity. It measured soot limits, extinction limits, temperatures, and flame behavior under different flow rates, dilutions, and pressures.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-100": {
+    "crew_safety_relevance": "The investigation is crucial for the safety of current and future space missions.",
+    "earth_impact": "Studying fire in small, sealed environments such as the Cygnus cargo supply vehicle benefits fire safety and prevention efforts on Earth, including inside mines, airplanes, or submarines.",
+    "summary": "This study examined how quickly a large-scale fire grows in low gravity and how low-gravity flammability limits compare to those from NASA's normal gravity material flammability screening test. The experiments were conducted on the Cygnus resupply vehicle after it departed from the ISS.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-101": {
+    "crew_safety_relevance": "The work supports spacecraft fire safety by providing data for advanced smoke detectors needed on long-duration missions.",
+    "earth_impact": "The smoke detectors developed from these results could also be useful in other extreme environments on Earth, such as submarines or underwater laboratories, where accurate smoke detection can save lives.",
+    "summary": "The SAME-R investigation studied the sizes of liquid smoke particles formed in low gravity and how droplet size relates to smoke generation and transport conditions. It repeated the original SAME experiment with a new test material, wider test conditions, and a new instrument after the earlier sample grids came back contaminated.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-102": {
+    "crew_safety_relevance": "The experiment supports spacecraft fire safety by providing data to develop advanced smoke detectors for future long-duration missions.",
+    "earth_impact": "The smoke detectors developed from these results can also be useful in other extreme environments on Earth, such as submarines or underwater laboratories, where accurate smoke detection can save lives.",
+    "summary": "This investigation studied the sizes that liquid smoke particulate reaches in low gravity and related the droplet size distribution to smoke generation and transport conditions. It also aimed to develop a numerical code to predict smoke droplet growth.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-106": {
+    "crew_safety_relevance": "Not stated in the source.",
+    "earth_impact": "Improved numerical models for flame behavior lead to more efficient combustion technologies on Earth.",
+    "summary": "The investigation studied the structure and stability of laminar diffusion flames in microgravity. It examined flame liftoff limits, fuel dilution effects, soot formation, and heat loss.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-107": {
+    "crew_safety_relevance": "The results are expected to improve understanding of soot formation mechanisms and help design safer spacecraft environments.",
+    "earth_impact": "The study could possibly provide insights to better fuel formulations and combustion processes.",
+    "summary": "SPICE studied how flames behave in microgravity aboard the ISS, looking at smoke points, flame lengths, and soot production for fuels such as methane, ethylene, propane, and propylene. Burner diameter, co-flow air velocity, and fuel flow rate were varied to find the point where flames begin emitting soot.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-115": {
+    "crew_safety_relevance": "The text states that models characterizing smoke particles could lead to better smoke detection devices and prevent fires that can cause loss of materiel and loss of life.",
+    "earth_impact": "Models and tools that characterize smoke particles can show how temperature, gravity, and material properties affect the smoke produced, leading to better smoke detection devices and preventing fires that cause loss of materiel and loss of life.",
+    "summary": "Researchers used numerical simulation to study how smoke particles from a heated material form and grow in Earth gravity versus microgravity. They compared the two to identify the fluid dynamic mechanisms behind the differences.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-117": {
+    "crew_safety_relevance": "The study has potential to improve spacecraft fire-safety modeling by resolving cool-flame and extinction behavior in microgravity and defining safer operating envelopes and materials.",
+    "earth_impact": "It advances low-temperature combustion understanding relevant to engine knock, efficiency, and emissions, and delivers validated CFD tools transferable to practical combustors.",
+    "summary": "This ground study used flight data from NASA's FLEX experiment to quantify how imposed heating and air movement control the behavior of fuel-droplet cool flames in microgravity. It built and validated 3-D CFD models to map the conditions under which these flames ignite, persist, or extinguish.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-142": {
+    "crew_safety_relevance": "The text identifies the work as spacecraft fire safety research involving ISS flame extinguishment experiments.",
+    "earth_impact": "These calculations from this investigation will serve to advance the understanding of near-limit flame dynamics and provide guidance for experimental observation of different flame regimes.",
+    "summary": "The study examined cool flame extinction using FLEX data, simulations, and ground-based experiments. It compared oxygen effects and extended ISS droplet flame experiments to broader combustion conditions.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-159": {
+    "crew_safety_relevance": "Not stated in the source.",
+    "earth_impact": "The measurements will help test and advance cool flame kinetics mechanisms, which should facilitate the development of more efficient internal combustion engines.",
+    "summary": "This project studied cool diffusion flames of gaseous fuels (propane, n-butane, and n-pentane) by performing spherical diffusion flame tests aboard the International Space Station. It used advanced CFD simulations and chemical kinetics mechanisms to match the ISS measurements.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-20": {
+    "crew_safety_relevance": "The experiments examine the atmospheres NASA is considering for human space missions, and the results are described as relevant to spacecraft fire safety.",
+    "earth_impact": "BRE yielded data relevant to spacecraft fire safety, showing quasi-steady burning of condensed-phase materials in microgravity without airflow — notably in elevated-oxygen atmospheres, while such flames in a 21% oxygen atmosphere self-extinguished quickly — which suggests NASA may want to increase use of its alternative flammability Test 2 with the cone calorimeter.",
+    "summary": "The Burning Rate Emulator flight program studies how gaseous fuel flames burn in long-duration microgravity on porous circular burners, across varying oxygen concentrations, pressures, and diluents. It also covers extinction limits, with supporting normal-gravity, drop facility, and CFD work.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-21": {
+    "crew_safety_relevance": "Not stated in the source.",
+    "earth_impact": "An understanding of the factors that affect flame extinction in diffusion flames is critical in the suppression of fires and in improving engine efficiency.",
+    "summary": "This study examines how methane and ethylene diffusion flames behave across a range of velocities and fuel dilution levels in microgravity, measuring flame shape, temperatures, and soot properties. The goal is to improve computational combustion models, including soot sub-models, for both dilute and sooting flames.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-22": {
+    "crew_safety_relevance": "Not stated in the source.",
+    "earth_impact": "Using electric fields to control flames could reduce harmful pollutants and soot from fossil fuel combustion and allow more efficient burning, cutting fuel consumption as well as unwanted emissions.",
+    "summary": "This investigation studied how electric fields affect laminar diffusion flames in microgravity, measuring the relationship between field voltage and chemi-ion current, flame response to electric forcing, and soot formation. Tests used methane and ethylene flames, with and without an air coflow, in the Combustion Integrated Rack.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-23": {
+    "crew_safety_relevance": "Not stated in the source.",
+    "earth_impact": "Because diffusion flame burning is the basis of many combustion engines and devices, understanding the underlying dynamics and chemistry of diffusion flames is important for improving performance in terms of power, efficiency, pollutant emissions, and reliability.",
+    "summary": "This experiment series studies the structure and chemistry of spherical diffusion flames burning hydrogen, methane, and ethylene with various diluents in microgravity. Measurements of temperature, species, radiation, extinction limits, and pulsating instabilities are compared against detailed computer simulations.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-25": {
+    "crew_safety_relevance": "A primary goal of BASS-II is improved spacecraft fire safety, helping engineers select the safest materials and improve firefighting methods for future space missions.",
+    "earth_impact": "The combustion models refined with BASS-II data can be used to more accurately study flames on Earth, such as in wildfires, building fires, and energy recapture from waste recycling.",
+    "summary": "BASS-II studied how solid fuels ignite, grow flames, spread, and extinguish in low-velocity forced airflow in microgravity aboard the International Space Station. Tests used a wind tunnel in the Microgravity Science Glovebox with airflow up to 40 cm/s, oxygen concentrations varied below 21% by adding nitrogen, and different sample geometries such as slabs, cylinders, and spherical sections.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-26": {
+    "crew_safety_relevance": "The results will guide novel spacecraft design and ensure the safety of future crewed missions.",
+    "earth_impact": "The validated combustion models have wide applicability to the general understanding of many terrestrial combustion problems.",
+    "summary": "The BASS experiment studied how solid fuels burn in microgravity aboard the ISS, examining flame spread under different airflow directions and speeds. It also assessed how well an inert gaseous extinguishing agent (nitrogen) puts out flames across various materials and geometries.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-39": {
+    "crew_safety_relevance": "The research supports the design of safer spacecraft systems by refining knowledge of combustion in microgravity environments.",
+    "earth_impact": "A basic understanding of cool flames is important for understanding ignition phenomena of practical fuels and fuel additives, and plays a key role in the development and selection of new fuels and the design of advanced engines such as clean, high-efficiency Homogeneous Charge Compression Ignition (HCCI) engines.",
+    "summary": "This investigation studied the combustion behavior of fuel droplets, including n-dodecane and n-dodecane/iso-dodecane mixtures, across a range of pressures and with helium dilution. It examined how droplet size, pressure, and soot formation relate to cool flame behavior and extinction.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-47": {
+    "crew_safety_relevance": "Reliable smoke and aerosol detection supports spacecraft fire safety, which is critical for crew protection.",
+    "earth_impact": "The successful adaptation of the TSI P-Trak for microgravity can inform the design of instruments for challenging Earth environments such as submarines or underwater laboratories, where accurate smoke detection can save lives.",
+    "summary": "DAFT / DAFT-2 tested whether a modified TSI P-Trak particulate counter could accurately measure smoke aerosols in microgravity. The goal was to reduce risk for the Smoke Aerosol Measurement Experiment (SAME) by confirming the instrument's reliability without relying on gravity.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-60": {
+    "crew_safety_relevance": "For space applications, the results support safer fire detection, suppression, and cleaner combustion technologies critical for long-duration missions.",
+    "earth_impact": "On Earth, the insights help reduce pollutant emissions, optimize combustion efficiency, and inform the design of cleaner energy and industrial systems.",
+    "summary": "This ground study combined computational and experimental methods to derive temperature distributions and soot volume fractions from SPICE data, aiming to understand soot formation in flames. It sought to reconcile microgravity and normal gravity flame behavior and improve predictive combustion models.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-62": {
+    "crew_safety_relevance": "The research supports spacecraft fire safety by helping predict flammability limits and manage fire risks in spacecraft habitats.",
+    "earth_impact": "On Earth, these advancements could improve combustion modeling by deepening our understanding of coupled thermal, chemical, and flow processes, which betters fire safety standards.",
+    "summary": "The study developed and tested flamelet generated manifold models for concurrent flame spread in microgravity. It compared the models with BASS experiment images using two-color tomography.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-68": {
+    "crew_safety_relevance": "The experiment addresses spacecraft fire safety.",
+    "earth_impact": "Insights gained from these studies can lead to more efficient and cleaner combustion technologies which are crucial for reducing pollution and greenhouse gas emissions.",
+    "summary": "FLEX-2 studied how fuel droplets burn and extinguish in microgravity under different conditions. It collected data to validate droplet combustion models and study soot formation.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-69": {
+    "crew_safety_relevance": "The research contributes to improved fire safety protocols for future space missions, helping ensure the safety of crew members in environments where traditional fire suppression methods may be ineffective.",
+    "earth_impact": "The insights gained have the potential to advance fire safety in confined and reduced-gravity environments on Earth, such as submarines or high-altitude aircraft.",
+    "summary": "The FLEX experiment studied how liquid fuel droplets burn and extinguish in microgravity and measured the effectiveness of gaseous fire suppressants such as CO2, He, and SF6. It aimed to map flammability limits and develop predictive models for combustion under reduced gravity.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-98": {
+    "crew_safety_relevance": "The investigation is crucial for the safety of current and future space missions.",
+    "earth_impact": "Studying fire in small, sealed environments such as the Cygnus cargo supply vehicle benefits fire safety and prevention efforts on Earth, including inside mines, airplanes, or submarines.",
+    "summary": "The experiment studied how rapidly a large-scale fire grows in low gravity and how the flammability limits of materials in microgravity compare to those from normal-gravity screening tests. A large fabric sample was ignited inside an unmanned Cygnus cargo vehicle after it departed the ISS, with instruments recording flame growth, temperatures, and gas levels.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  },
+  "PSI-99": {
+    "crew_safety_relevance": "The investigation is crucial for the safety of current and future space missions.",
+    "earth_impact": "Studying fire in small, sealed environments such as the Cygnus cargo supply vehicle benefits fire safety and prevention efforts on Earth, including inside mines, airplanes, or submarines.",
+    "summary": "SAFFIRE-II studied how rapidly a large-scale fire grows in low gravity and compared low-gravity flammability limits to those from NASA's normal-gravity screening test. The experiment burned a card of nine material samples on the unmanned Cygnus cargo vehicle after it departed the ISS.",
+    "model": "baidu/ernie-5.5-flash-preview:free",
+    "generated_from": "NASA PSI investigation text"
+  }
+}

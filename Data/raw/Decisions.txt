@@ -1,0 +1,65 @@
+# Data cleaning decisions
+(source file) 4_5906670146239341254.csv (300 rows, 17 columns)
+(output file) experiments_clean.csv (300 rows, 20 columns)
+
+## Decisions
+1-"future dates" 20 experiments have a `test_date` later than today
+  I kept them and flagged them with a new column `is_future_date`
+  no rows were deleted
+
+2-"date type" I converted `test_date` from text type to a real datetime type
+
+3-"helper columns" I added `test_month`(year and month taken from `test_date`)
+                   and `hazardous` (true when outcome is [steady_spread , flash_fire])
+
+## Quality checks that passed
+1-No missing values and no dublicated `experiment_id`
+2-oxygen concentration and pressure are within the ranges in the data dictionary
+3-all catigorical columns contain only allowed values
+4-No `extinguished` experiments has a flam spread rate above 0
+5-`risk_level` catigories match `risk_score` and don't overlap
+
+## Data quality notes
+- In `quiescent` (still air) experiments, `flow_velocity_cm_s` is not close
+  to zero (range 0.46 to 39.85 cm/s). The same pattern appears in the whole
+  dataset. I did not change it. To be confirmed with the organizers.
+- No experiment has the `critical` risk level, although it exists in the
+  data dictionary.
+- The data is synthetic (simulated records), as stated in the data dictionary.
+
+
+
+
+==========================================
+PSI-159 (official data) - cleaning decisions
+==========================================
+
+
+Result: 179 rows, 20 columns.
+Files delivered: psi159_clean.csv, experiments_psi159.db
+
+
+1. Column names: removed stray spaces and renamed to snake_case
+   with units (e.g. pressure_kpa).
+2. Test IDs had inconsistent spaces; standardised and used to build
+   experiment_id = "PSI159-" + test id.
+3. Test date: the file has no date column. Derived from the Test ID
+   (format YYDDD: year + day of year). Assumption, consistent with the
+   camera log file (21256 = 2021-09-13).
+4. Units: oxygen fraction x100 -> percent; pressure bar x100 -> kPa.
+5. Empty values were NOT filled. Peak burner temperature, end mode and
+   burn time are empty only when there was no hot ignition. Tad and Zst
+   are empty in 2 rows where fuel flow is 0 (Excel #DIV/0!).
+6. cool_flame: empty treated as False. Cool flame results exist only
+   for test days 21174 and 21291, so empty may mean "not examined".
+7. end_mode: SE -> self_extinguished, FT -> flow_terminated,
+   "-" -> none. Meaning taken from the column name (assumption).
+8. Tad (K) renamed adiabatic_temp_k: probably a calculated value,
+   not a measurement.
+9. xf, tfp, zst kept as in the source; exact meaning not confirmed.
+10. Dropped: Flame Type (all values "Normal").
+11. Flagged, not changed: PSI159-21106F4 has hot_ignition = False but
+    a burn time of 22 s and the comment "hot flame".
+12. No risk_score / risk_level in this dataset (they existed only in
+    the synthetic data). To be decided with the team.
+

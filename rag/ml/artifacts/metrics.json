@@ -1,0 +1,194 @@
+{
+  "trained_at": "2026-11-13T21:02:45.032453+00:00",
+  "data": {
+    "source": "NASA PSI-159 CFI-G Normal Flames (real ISS tests)",
+    "rows_total": 179,
+    "rows_usable": 175,
+    "ignition_rows": 175,
+    "sustained_rows": 132,
+    "burn_time_rows": 132,
+    "days": 11
+  },
+  "evaluation": "leave-one-day-out CV (headline) + random 5-fold (optimistic reference)",
+  "ignition": {
+    "chosen": "random_forest",
+    "candidates": [
+      {
+        "model": "logreg",
+        "leave_one_day_out": {
+          "n": 175,
+          "positive_rate": 0.754,
+          "accuracy": 0.594,
+          "f1": 0.722,
+          "brier": 0.281,
+          "majority_baseline_accuracy": 0.754,
+          "roc_auc": 0.476
+        },
+        "random_5fold_optimistic": {
+          "n": 175,
+          "positive_rate": 0.754,
+          "accuracy": 0.686,
+          "f1": 0.766,
+          "brier": 0.203,
+          "majority_baseline_accuracy": 0.754,
+          "roc_auc": 0.744
+        }
+      },
+      {
+        "model": "random_forest",
+        "leave_one_day_out": {
+          "n": 175,
+          "positive_rate": 0.754,
+          "accuracy": 0.771,
+          "f1": 0.863,
+          "brier": 0.156,
+          "majority_baseline_accuracy": 0.754,
+          "roc_auc": 0.77
+        },
+        "random_5fold_optimistic": {
+          "n": 175,
+          "positive_rate": 0.754,
+          "accuracy": 0.811,
+          "f1": 0.863,
+          "brier": 0.129,
+          "majority_baseline_accuracy": 0.754,
+          "roc_auc": 0.891
+        }
+      }
+    ]
+  },
+  "sustained": {
+    "chosen": "logreg",
+    "candidates": [
+      {
+        "model": "logreg",
+        "leave_one_day_out": {
+          "n": 132,
+          "positive_rate": 0.227,
+          "accuracy": 0.75,
+          "f1": 0.582,
+          "brier": 0.174,
+          "majority_baseline_accuracy": 0.773,
+          "roc_auc": 0.795
+        },
+        "random_5fold_optimistic": {
+          "n": 132,
+          "positive_rate": 0.227,
+          "accuracy": 0.727,
+          "f1": 0.55,
+          "brier": 0.169,
+          "majority_baseline_accuracy": 0.773,
+          "roc_auc": 0.813
+        }
+      },
+      {
+        "model": "random_forest",
+        "leave_one_day_out": {
+          "n": 132,
+          "positive_rate": 0.227,
+          "accuracy": 0.795,
+          "f1": 0.542,
+          "brier": 0.163,
+          "majority_baseline_accuracy": 0.773,
+          "roc_auc": 0.771
+        },
+        "random_5fold_optimistic": {
+          "n": 132,
+          "positive_rate": 0.227,
+          "accuracy": 0.795,
+          "f1": 0.609,
+          "brier": 0.137,
+          "majority_baseline_accuracy": 0.773,
+          "roc_auc": 0.879
+        }
+      }
+    ]
+  },
+  "burn_time": {
+    "chosen": "random_forest",
+    "candidates": [
+      {
+        "model": "ridge",
+        "leave_one_day_out": {
+          "n": 132,
+          "mae_s": 34.8,
+          "median_abs_error_s": 13.5,
+          "baseline_mae_s_predict_median": 43.4
+        },
+        "random_5fold_optimistic": {
+          "n": 132,
+          "mae_s": 34.4,
+          "median_abs_error_s": 15.4,
+          "baseline_mae_s_predict_median": 43.4
+        }
+      },
+      {
+        "model": "random_forest",
+        "leave_one_day_out": {
+          "n": 132,
+          "mae_s": 29.6,
+          "median_abs_error_s": 12.1,
+          "baseline_mae_s_predict_median": 43.4
+        },
+        "random_5fold_optimistic": {
+          "n": 132,
+          "mae_s": 25.4,
+          "median_abs_error_s": 9.8,
+          "baseline_mae_s_predict_median": 43.4
+        }
+      }
+    ]
+  },
+  "o2_sweep_pooled_fuels_1atm": [
+    {
+      "o2_pct": 18,
+      "p_ignition": 0.7266,
+      "p_sustained": 0.0139,
+      "burn_time_s": 9.5,
+      "hazard_index": 13.0
+    },
+    {
+      "o2_pct": 21,
+      "p_ignition": 0.7906,
+      "p_sustained": 0.028,
+      "burn_time_s": 9.9,
+      "hazard_index": 14.7
+    },
+    {
+      "o2_pct": 25,
+      "p_ignition": 0.8321,
+      "p_sustained": 0.0693,
+      "burn_time_s": 9.7,
+      "hazard_index": 16.7
+    },
+    {
+      "o2_pct": 30,
+      "p_ignition": 0.8721,
+      "p_sustained": 0.1962,
+      "burn_time_s": 125.5,
+      "hazard_index": 44.2
+    },
+    {
+      "o2_pct": 35,
+      "p_ignition": 0.874,
+      "p_sustained": 0.4446,
+      "burn_time_s": 125.5,
+      "hazard_index": 50.5
+    },
+    {
+      "o2_pct": 40,
+      "p_ignition": 0.9375,
+      "p_sustained": 0.7242,
+      "burn_time_s": 135.1,
+      "hazard_index": 62.8
+    }
+  ],
+  "features": [
+    "o2_pct",
+    "pressure_bar",
+    "xf",
+    "fuel_flow_mg_s",
+    "fuel_bottle_pct",
+    "fuel"
+  ]
+}

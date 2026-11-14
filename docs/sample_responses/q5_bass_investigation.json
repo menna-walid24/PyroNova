@@ -1,0 +1,83 @@
+{
+  "question": "What was the BASS experiment about and what did it find?",
+  "answer": "BASS (Burning and Suppression of Solids, PSI-26) was an ISS investigation conducted in the Microgravity Science Glovebox to study solid-fuel flammability and suppression in microgravity. It tested fabric (75% cotton/25% fiberglass), Nomex, and Ultem samples ignited by a Kanthal wire, with airflow up to 40 cm/s in concurrent or opposed configurations over a 76 mm x 76 mm flow duct, plus spheres and cylinders. BASS tested the hypothesis that materials in microgravity with adequate ventilation burn as well if not better than in normal gravity. From 130 flight tests, observations mention ignition in 71 tests, flame spread in 20, and extinguishment in 43, at oxygen concentrations of 15.9–22.7% and about 0.98 atm. Results support spacecraft material selection and fire-suppression modeling (PSI-DOC-inv-PSI-26, doi:10.60555/58h4-dy80; PSI-DOC-stat-bass-summary).",
+  "experimental_evidence": [
+    {
+      "experiment_id": "PSI-26",
+      "oxygen_concentration": null,
+      "burn_time_s": null,
+      "peak_burner_temp_c": null,
+      "source": "PSI-DOC-inv-PSI-26",
+      "finding": "BASS objectives: (1) bridge the gap between NASA-STD-6001 Test 1, ground microgravity tests, and actual microgravity material flammability using longer flight burn times and realistic thicker fuels including wake flames; (2) assess inert gaseous extinguishing agent effectiveness across materials, geometries, preheating, and flow. Approach: MSG-based tests with cotton/fiberglass fabric, Nomex, and Ultem; Kanthal wire ignition; variable-speed fan up to 40 cm/s; concurrent and opposed airflow; flame size, shape, color, spread rate, and quenching recorded. Hypothesis: materials burn as well or better in microgravity than in normal gravity under identical conditions. Source: https://psi.nasa.gov/physci/repo/data/investigations/PSI-26 (doi:10.60555/58h4-dy80)."
+    },
+    {
+      "experiment_id": "PSI-26",
+      "oxygen_concentration": null,
+      "burn_time_s": null,
+      "peak_burner_temp_c": null,
+      "source": "PSI-DOC-stat-bass-summary",
+      "finding": "130 BASS flight tests; 71 tests mention ignition, 20 mention flame spread, 43 mention extinguishment (keyword-derived, approximate). O2 range 15.9–22.7% at about 0.98 atm. Most common materials: 2 cm sphere (18), PMMA sphere 2 cm (10), SIBAL 2 cm (9), Japan Wax Candle wake (8), PMMA 2 cm (8), 1 cm sphere (6). Source: https://psi.nasa.gov/physci/repo/data/investigations/PSI-26."
+    }
+  ],
+  "prediction": [
+    {
+      "experiment_id": "CFI-21112-C4",
+      "label": "no_fire",
+      "probability": 0.1387,
+      "riskBand": "LOW",
+      "predicted_end_mode": "no_ignition",
+      "end_mode_probabilities": {
+        "no_ignition": 0.8384,
+        "self_extinguished": 0.0229,
+        "flow_terminated": 0.1387
+      },
+      "p_hot_ignition": 0.1616,
+      "predicted_burn_time_s": 27.9,
+      "hazard_index": 8.7,
+      "level": "LOW",
+      "model": {
+        "ignition": "random_forest",
+        "sustained": "logreg",
+        "burn_time": "random_forest"
+      },
+      "caveats": [
+        "O2 levels above ~23% in these tests (33-40%) are ISS test-chamber conditions, not a spacecraft cabin atmosphere (ISS air is ~21%)."
+      ],
+      "observed_end_mode": "none",
+      "observed_burn_time_s": null
+    }
+  ],
+  "observed_trends": [
+    ":{",
+    "trend",
+    "BASS flight tests produced ignition, flame spread, and extinguishment observations across 130 tests",
+    "evidence_status",
+    "supported",
+    "explanation",
+    "Of 130 BASS flight tests, observations mention ignition in 71 tests, flame spread in 20, and extinguishment in 43 (keyword-derived, approximate), over an O2 range of 15.9–22.7% at about 0.98 atm.",
+    "experiment_ids",
+    "PSI-26"
+  ],
+  "interpretation": "BASS was designed to determine whether standard 1-g flammability tests are conservative for spacecraft materials and to evaluate nitrogen-like inert gas suppression in microgravity. The evidence shows BASS conducted 130 ISS tests with solid fuels under controlled forced flow, observing ignition, spread, and extinction. Its central hypothesis—that microgravity burning can be as good as or better than normal-gravity burning with adequate ventilation—motivated the longer-duration flight tests unavailable in drop towers. BASS publications cover opposed-flow flame spread, radiation, boundary-layer effects, and flammability limits. BASS-II (PSI-25) later extended this work to ignition, growth, and extinction limits across more geometries and oxygen concentrations. Quantitative burn times and peak temperatures for individual BASS tests are not provided in the retrieved evidence.",
+  "safety_insight": "Because materials may burn as well or better in microgravity than in normal gravity, spacecraft material selection based only on 1-g upward-burning tests may not be conservative for flight. BASS results support using microgravity flame-spread and suppression data to select safer materials and improve firefighting methods for future crewed missions.",
+  "limitations": [
+    "Individual BASS test experiment IDs, burn times, and peak burner temperatures are not provided in the retrieved evidence; only aggregate test-outcome counts and an oxygen range are available.",
+    "BASS test-outcome counts (ignition, flame spread, extinguishment) are keyword-derived and approximate.",
+    "The supplied machine-learning prediction applies to CFI-21112-C4 (PSI-159 CFI-G propane test), not to BASS, so no BASS prediction is available.",
+    "BASS-II (PSI-25) is a separate follow-on investigation; its results should not be conflated with BASS (PSI-26).",
+    "The BASS oxygen range (15.9–22.7%) is below 25%, so the ISS test-chamber oxygen caveat for 33–40% does not apply to BASS."
+  ],
+  "sources": [
+    "PSI-26"
+  ],
+  "model_used": "nvidia/nemotron-3.5-super-vl:free",
+  "answerability": {
+    "answerable": true,
+    "decision": "knowledge_base",
+    "reason": "No explicit experiment ID to validate.",
+    "top_score": -0.9753429293632507,
+    "query_coverage": 0.75,
+    "candidate_count": 6
+  },
+  "prediction_notice": "ML predictions are trained on 175 real ISS tests (NASA PSI-159 CFI-G) and are not certified fire-safety guidance."
+}
