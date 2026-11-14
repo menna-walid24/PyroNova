@@ -1,4 +1,5 @@
-const BASE_URL = 'https://pyronova-flame-in-freefall.vercel.app/';
+// No trailing slash: endpoints start with '/', and '//login' can redirect or 404 (a redirect breaks the CORS preflight).
+const BASE_URL = 'https://pyronova-flame-in-freefall.vercel.app';
 
 const getAuthToken = () => {
   if (typeof window !== 'undefined') {
@@ -26,7 +27,17 @@ async function apiRequest(endpoint: string, options: RequestInit = {}, requiresA
     headers,
   });
 
-  const data = await response.json();
+  // An error page or an empty body is not JSON: keep the real status instead of a JSON parse error.
+  const text = await response.text();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- same shape response.json() returned before
+  let data: any = {};
+  if (text) {
+    try {
+      data = JSON.parse(text);
+    } catch {
+      data = { message: `Unexpected response from the server (${response.status}).` };
+    }
+  }
 
   if (!response.ok) {
     throw data;
@@ -55,8 +66,9 @@ export const authApi = {
   forgotPassword: (email: string) =>
     apiRequest('/forgot-password', { method: 'POST', body: JSON.stringify({ email }) }, false),
 
+  // The backend reads the emailed code as `otp`.
   resetPassword: (resetData: {
-    token: string;
+    otp: string;
     email: string;
     password: string;
     password_confirmation: string;
