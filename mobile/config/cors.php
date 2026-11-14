@@ -27,6 +27,13 @@ return [
 
     'exposed_headers' => [],
 
+
+
+'paths' => ['*'],
+'allowed_methods' => ['*'],
+'allowed_origins' => ['http://localhost:3000','https://pyronova-xoxb.vercel.app/' ],
+'allowed_headers' => ['*'],
+'supports_credentials' => false,
     'max_age' => 0,
 
     'supports_credentials' => true,
