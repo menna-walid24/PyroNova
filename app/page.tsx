@@ -28,12 +28,7 @@ export default function Home() {
             >
               Dashboard
             </Link>
-            <Link
-              href="/chat"
-              className="text-[#C3CAD8] hover:text-white hover:bg-white/5 px-4 py-2 rounded-full transition-all"
-            >
-              AI Chat
-            </Link>
+            
             <Link
               href="/guidelines"
               className="text-[#C3CAD8] hover:text-white hover:bg-white/5 px-4 py-2 rounded-full transition-all"

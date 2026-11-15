@@ -1,4 +1,3 @@
-// No trailing slash: endpoints start with '/', and '//login' can redirect or 404 (a redirect breaks the CORS preflight).
 const BASE_URL = 'https://pyronova-flame-in-freefall.vercel.app';
 
 const getAuthToken = () => {
@@ -27,7 +26,6 @@ async function apiRequest(endpoint: string, options: RequestInit = {}, requiresA
     headers,
   });
 
-  // An error page or an empty body is not JSON: keep the real status instead of a JSON parse error.
   const text = await response.text();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- same shape response.json() returned before
   let data: any = {};
