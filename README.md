@@ -46,7 +46,6 @@ Its main features include:
 
 ## 📱 Project Links
 
-* **Mobile Application (APK):** [Add APK Download Link Here]
-* **Web Platform:** [Add Website Link Here]
-* **GitHub Repository:** [Add Repository Link Here]
+* **Web Platform:** [https://pyronova-xoxb.vercel.app]
+* **Demo:** [https://youtu.be/jdB3v0jOhrY]
 
