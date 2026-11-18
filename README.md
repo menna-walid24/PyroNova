@@ -4,7 +4,7 @@
 
 The project consists of an interconnected **mobile application**, a **web platform**, and a centralized **backend** that manages authentication, user data, communication between the two platforms, and AI integration.
 
-## 🚀 Project Components
+##  Project Components
 
 ### 1. Mobile Application
 
